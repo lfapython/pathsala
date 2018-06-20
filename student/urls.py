@@ -1,8 +1,8 @@
 
 from django.urls import path
 
-from django.http import HttpResponse
+from .views import get_students
 
 urlpatterns = [
-    path("", lambda request: HttpResponse("Hello"))
+    path("", get_students)
 ]
