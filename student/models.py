@@ -4,3 +4,4 @@ from django.db import models
 class Student(models.Model):
     fullname = models.CharField(max_length=128)
     address = models.TextField()
+    dob = models.DateField()
