@@ -6,14 +6,9 @@ from .models import Student
 # Create your views here.
 def get_all_student(request):
     students = Student.objects.all()
-    print(students)
-    html = """<table><tr><td>Fullname</td><td>Address</td></tr>"""
-    for student in students:
-        print(student)
-        html += "<tr><td>" + student.fullname + "</td>"
-        html += "<td>" + student.address + "</td></tr>"
-    html += "</table>"
-    return HttpResponse(html)
+    return render(
+        request, "list_students.html", context={"students": students}
+    )
 
 
 def add_student(request):
